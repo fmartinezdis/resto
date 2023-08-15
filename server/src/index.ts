@@ -1,4 +1,6 @@
 import express, { Application } from "express";
+import indexRoutes from './routes/indexRoutes';
+import loginRoutes from './routes/loginRoutes';
 
 class Server {
     public app: Application;
@@ -14,7 +16,7 @@ class Server {
     }
 
     routes () :void {
-
+           
     }
 
     start () :void {
