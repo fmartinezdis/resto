@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-class indexRoutes  {
+class IndexRoutes  {
     public router: Router = Router()
     
     constructor (){
@@ -14,3 +14,6 @@ class indexRoutes  {
     }
 
 }
+
+const indexRoutes = new IndexRoutes()
+export default indexRoutes.router
