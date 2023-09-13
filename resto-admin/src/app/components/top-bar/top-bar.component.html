@@ -4,7 +4,6 @@
       
       <form class="d-flex" role="search">
         <p class="text-white me-2" *ngIf="userName">Hola!, {{userName}}</p>
-        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
 
         <button class="btn btn-outline-light me-2" type="button" *ngIf="!userLogged" routerLink="login">Login</button>
         <button class="btn btn-outline-light me-2" type="button" *ngIf="userLogged" (click)="logOut()">Logout</button>
