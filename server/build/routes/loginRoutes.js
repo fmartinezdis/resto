@@ -9,6 +9,8 @@ class LoginRoutes {
     }
     config() {
         this.router.post('/register', loginController_1.loginController.register);
+        this.router.post('/', loginController_1.loginController.login);
+        this.router.get('/:token', loginController_1.loginController.getUser);
     }
 }
 const loginRoutes = new LoginRoutes();

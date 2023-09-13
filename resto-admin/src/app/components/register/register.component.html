@@ -1,27 +1,37 @@
 <div class="register">
-    <form class="custom-form" method="post">
+    <form class="custom-form" [formGroup]="userForm" (ngSubmit)="register()">
       <h1>Register</h1>
       <input
+        type="text"
+        name="name"
+        formControlName ="name"
+        placeholder="name"
+        required="required"
+      />
+      <span class="text-danger">
+        <p *ngIf="userForm.controls.name.touched && !userForm.controls.name.valid">Name is required</p>
+      </span>
+      <input
         type="email"
-
         name="email"
+        formControlName ="email"
         placeholder="Email"
         required="required"
       />
+      <span class="text-danger">
+        <p *ngIf="userForm.controls.email.touched && !userForm.controls.email.valid">Email is required</p>
+      </span>
       <input
         type="password"
-        
+        formControlName ="password"
         name="password"
         placeholder="Password"
         required="required"
       />
-      <input
-        type="password"
-        
-        name="password"
-        placeholder="Repeat the password"
-        required="required"
-      />
-      <button type="submit" (click)="register()">Register</button>
+      <span class="text-danger">
+        <p *ngIf="userForm.controls.password.touched && !userForm.controls.password.valid">password is required</p>
+      </span>
+ 
+      <button [disabled]="!userForm.valid" type="submit">Register</button>
     </form>
   </div>

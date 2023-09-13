@@ -1,11 +1,14 @@
 <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="/">Navbar</a>
+      
       <form class="d-flex" role="search">
+        <p class="text-white me-2" *ngIf="userName">Hola!, {{userName}}</p>
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-        <button class="btn btn-outline-light me-2" type="button" routerLink="login">Login</button>
-        <button class="btn btn-outline-light me-2" type="button">Logout</button>
-        <button class="btn btn-outline-light me-2" type="button" routerLink="register">Register</button>
+
+        <button class="btn btn-outline-light me-2" type="button" *ngIf="!userLogged" routerLink="login">Login</button>
+        <button class="btn btn-outline-light me-2" type="button" *ngIf="userLogged" (click)="logOut()">Logout</button>
+        <button class="btn btn-outline-light me-2" type="button" *ngIf="!userLogged" routerLink="register">Register</button>
       </form>
     </div>
   </nav>

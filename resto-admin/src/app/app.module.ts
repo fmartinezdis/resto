@@ -8,6 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from  '@angular/common/http';
+import { CookieService } from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -19,9 +22,11 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
