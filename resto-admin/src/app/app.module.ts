@@ -11,6 +11,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 import { CookieService } from "ngx-cookie-service";
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CookieService } from "ngx-cookie-service";
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    TopBarComponent
+    TopBarComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

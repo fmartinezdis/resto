@@ -4,10 +4,10 @@
       
       <form class="d-flex" role="search">
         <p class="text-white me-2" *ngIf="userName">Hola!, {{userName}}</p>
-
         <button class="btn btn-outline-light me-2" type="button" *ngIf="!userLogged" routerLink="login">Login</button>
         <button class="btn btn-outline-light me-2" type="button" *ngIf="userLogged" (click)="logOut()">Logout</button>
         <button class="btn btn-outline-light me-2" type="button" *ngIf="!userLogged" routerLink="register">Register</button>
+        <button class="btn btn-outline-light me-2" type="button" routerLink="products">Products</button>
       </form>
     </div>
   </nav>

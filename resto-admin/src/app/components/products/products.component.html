@@ -1,0 +1,38 @@
+<h3>PRODUCTOS</h3>
+<div class="row">
+<div class="col-md-6">
+<form  [formGroup]="productForm" (submit)="save()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="Producto" formControlName="name">
+    </div>
+    <span class="text-danger">
+        <p *ngIf="productForm.controls.name.touched && !productForm.controls.name.valid">Campo Nombre es requerido</p>
+      </span>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Precio</label>
+        <input type="text" class="form-control" placeholder="Precio" formControlName="price">
+    </div>
+    <span class="text-danger">
+        <p *ngIf="productForm.controls.price.touched && !productForm.controls.price.valid">Campo Precio es requerido</p>
+    </span>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Descripción</label>
+        <textarea class="form-control"  rows="3" formControlName="description"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Foto</label>
+        <input type="text" class="form-control" placeholder="foto" (keyup)="loadImage()" formControlName="foto">
+    </div>
+    <span class="text-danger">
+        <p *ngIf="productForm.controls.foto.touched && !productForm.controls.foto.valid">Campo Foto es requerido</p>
+    </span>
+
+    <button type="submit" class="btn btn-success me-3" [disabled]="productForm.invalid" >Grabar</button>
+    <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+</form>
+</div>
+<div class="col-md-6">
+    <img src={{fotoSrc}} class="rounded mx-auto d-block" alt="">
+</div>
+</div>

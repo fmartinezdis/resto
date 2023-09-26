@@ -17,20 +17,18 @@ export class TopBarComponent implements OnInit{
   ngOnInit(): void {
       this.router.events.subscribe (()=> {
           const token = this.userService.getToken()
+          if (token != '') {
           this.userService.getUser(token).subscribe (
             res=>{
               this.userName = JSON.parse(JSON.stringify(res)).name
-              console.log(this.userName)
               this.userLogged = true;
-            },
-            err => {
-              this.userName = "";
-              this.userLogged = false;
             }
           )
-      }
-      
-      )
+          } else {
+            this.userName = "";
+            this.userLogged = false;
+          }
+      })
   }
 
   logOut () {
